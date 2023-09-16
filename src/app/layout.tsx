@@ -1,10 +1,8 @@
 import React from "react";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import Navbar from "../components/Navbar.jsx";
-
-const inter = Inter({ subsets: ["latin"] });
+import { roboto } from "../fonts/fonts.tsx";
 
 export const metadata: Metadata = {
   title: "eCommerce xHUB",
@@ -18,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={roboto.className}>
         <Navbar />
         {children}
       </body>
