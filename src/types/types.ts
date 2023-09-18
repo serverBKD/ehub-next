@@ -14,8 +14,8 @@ interface Data {
 
 type StyleX = 'Style0' | 'Style1';
 
-type width = 220 | 320 | 420
-type height = 'auto' | 220 | 320 | 420
+type width = '220px' | '320px' | '420px'
+type height = 'auto' | '220px' | '320px' | '420px'
 
 interface SizeX {
     width: width,

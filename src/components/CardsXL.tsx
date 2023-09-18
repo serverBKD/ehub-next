@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Data, Text } from "../types/types.ts";
+import { Data, Text, StyleX } from "../types/types.ts";
 
 const data: Data[] = [
   {
@@ -32,22 +32,28 @@ const data: Data[] = [
     image: "/products/img4.jpg",
   },
 ];
-function Cards({ numGRID = 3 }: Text): any {
+const StyleX0 =
+  "w-full h-auto grid grid-cols-1 grid-flow-dense place-items-center mt-3 mb-[60px]";
+
+const StyleX1 =
+  "w-full h-auto mt-3 mb-[60px] flex justify-center items-align gap-x-3 flex-wrap";
+
+function CardsXL({ numGRID = 3 }: Text, S: StyleX): any {
   return (
-    <article className="w-full h-auto bg-white grid grid-cols-4 grid-flow-dense place-items-center mt-3 mb-[60px]">
+    <article className={S === "Style0" ? StyleX0 : StyleX1}>
       {data.slice(0, numGRID).map((item: any) => {
         return (
           <div
             key={item.id}
-            className="w-[320px] min-h-[320px] mt-7 rounded-lg overflow-hidden bg-[#f5f5f5] text-purple-800 col-span-2 md:col-span-1"
+            className="w-[420px] min-h-[420px] mt-7 rounded-lg overflow-hidden bg-[#f5f5f5] text-purple-800 col-span-2 md:col-span-1"
           >
             <Image
               src={item.image}
               layout="responsive"
-              className="w-[320px] h-[320px] "
+              className="shadow-lg overflow-hidden w-[320px] h-[320px] "
               alt="nada"
               width={320}
-              height={320}
+              height={420}
               style={{ objectFit: "contain", objectPosition: "center" }}
             />
             <p className="mt-3 justify-center text-xs font-semibold text-center underline">
@@ -63,9 +69,4 @@ function Cards({ numGRID = 3 }: Text): any {
   );
 }
 
-export default Cards;
-
-// <div
-//   key={item.id}
-//   className={`w-[${w}px] min-h-[${h}px] bg-[#f5f5f5] rounded-lg overflow-hidden text-purple-800 shadow-2xl col-span-2 md:col-span-1`}
-// ></div>
+export default CardsXL;
