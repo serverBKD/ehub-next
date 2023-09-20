@@ -1,7 +1,4 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "next"
-  ]
+  "extends": "next/core-web-vitals"
 }
 //. "extends": "next/core-web-vitals"
