@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import type { Metadata } from 'next'
-import localFont from 'next/font/local'
+import { oswald } from '@/fonts/fonts.js'
 import './globals.css'
+import loading from '@/app/loading.tsx'
+import notfound from '@/app/not-found.jsx'
 
-const oswald = localFont({
-	src: '../fonts/Oswald-VariableFont_wght.ttf',
-})
+
 
 
 export const metadata: Metadata = {
@@ -19,7 +20,9 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={`${oswald.className} w-full min-h-screen bg-white`}>{children}</body>
+			<body className={`${oswald.className} w-full min-h-screen bg-white`}>
+				{children}
+			</body>
 		</html>
 	)
 }
